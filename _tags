@@ -1,0 +1,70 @@
+# OASIS_START
+# DO NOT EDIT (digest: 23c578b63f53f29d8fe090eaed8ca940)
+# Ignore VCS directories, you can use the same kind of rule outside
+# OASIS_START/STOP if you want to exclude directories that contains
+# useless stuff for the build process
+true: annot, bin_annot
+<**/.svn>: -traverse
+<**/.svn>: not_hygienic
+".bzr": -traverse
+".bzr": not_hygienic
+".hg": -traverse
+".hg": not_hygienic
+".git": -traverse
+".git": not_hygienic
+"_darcs": -traverse
+"_darcs": not_hygienic
+# Library benchmark
+"benchmark.cmxs": use_benchmark
+<*.ml{,i,y}>: pkg_unix
+# Executable ar_ba
+<examples/ar_ba.{native,byte}>: pkg_bigarray
+<examples/ar_ba.{native,byte}>: pkg_unix
+<examples/ar_ba.{native,byte}>: use_benchmark
+# Executable composition
+<examples/composition.{native,byte}>: pkg_unix
+<examples/composition.{native,byte}>: use_benchmark
+# Executable iter
+<examples/iter.{native,byte}>: pkg_bigarray
+<examples/iter.{native,byte}>: pkg_unix
+<examples/iter.{native,byte}>: use_benchmark
+# Executable let_try
+<examples/let_try.{native,byte}>: pkg_bigarray
+<examples/let_try.{native,byte}>: pkg_unix
+<examples/let_try.{native,byte}>: use_benchmark
+# Executable loops
+<examples/loops.{native,byte}>: pkg_unix
+<examples/loops.{native,byte}>: use_benchmark
+# Executable match_array
+<examples/match_array.{native,byte}>: pkg_unix
+<examples/match_array.{native,byte}>: use_benchmark
+# Executable numbers
+<examples/numbers.{native,byte}>: pkg_unix
+<examples/numbers.{native,byte}>: use_benchmark
+# Executable regexps
+<examples/regexps.{native,byte}>: pkg_pcre
+<examples/regexps.{native,byte}>: pkg_str
+<examples/regexps.{native,byte}>: pkg_unix
+<examples/regexps.{native,byte}>: use_benchmark
+<examples/*.ml{,i,y}>: pkg_pcre
+<examples/*.ml{,i,y}>: pkg_str
+# Executable try_if
+<examples/try_if.{native,byte}>: pkg_bigarray
+<examples/try_if.{native,byte}>: pkg_unix
+<examples/try_if.{native,byte}>: use_benchmark
+<examples/*.ml{,i,y}>: pkg_bigarray
+# Executable func_record
+<examples/func_record.{native,byte}>: pkg_unix
+<examples/func_record.{native,byte}>: use_benchmark
+<examples/*.ml{,i,y}>: pkg_unix
+<examples/*.ml{,i,y}>: use_benchmark
+# Executable long_run
+<tests/long_run.{native,byte}>: pkg_unix
+<tests/long_run.{native,byte}>: use_benchmark
+# Executable tree
+<tests/tree.{native,byte}>: pkg_unix
+<tests/tree.{native,byte}>: use_benchmark
+<tests/*.ml{,i,y}>: pkg_unix
+<tests/*.ml{,i,y}>: use_benchmark
+# OASIS_STOP
+true: strict_formats, safe_string
